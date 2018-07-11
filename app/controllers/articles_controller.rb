@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
 
-
+  # método set_article (que é privado), é chamado pelos métodos (publicos)
+  # update, edit, show e destroy assim que eles são invocados
+  before_action :set_article, only: [:update, :edit, :show, :destroy]
 
   def index
     @articles = Article.all
@@ -11,7 +13,6 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    @article = Article.find(params[:id])
     if @article.update(article_params)
       flash[:notice] = "Article updated with success"
       redirect_to article_path(@article)
@@ -21,15 +22,12 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
   end
 
   def show
-    @article = Article.find(params[:id])
   end
 
   def destroy
-    @article = Article.find(params[:id])
     @article.destroy
     flash[:notice] = "Article was removed"
     redirect_to articles_path
@@ -54,6 +52,10 @@ class ArticlesController < ApplicationController
       # to set the parameter as permitted and limit which attributes should be
       # allowed for mass updating.
       params.require(:article).permit(:title, :description)
+    end
+
+    def set_article
+      @article = Article.find(params[:id])
     end
 
 end

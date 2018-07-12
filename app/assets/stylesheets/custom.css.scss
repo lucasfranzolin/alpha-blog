@@ -1,2 +1,60 @@
+$navbar-default-bg: #337ab7;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+#logo:hover { /* muda a cor quando passa o mouse por cima do logo*/
+  color: rgba(12,69,114,1);
+}
+
+.navbar {
+  font-weight: bold;
+}
+
+.navbar-default .navbar-nav > li > a{
+  color: white;
+}
+
+.jumbotron {
+  background: url('http://solvian.com/wp-content/uploads/2016/12/solvian1-1.jpg') center no-repeat;
+  background-size: cover;
+  height: 350px;
+  text-align: center;
+}
+
+.jumbotron h1 {
+  letter-spacing: 5px;
+}
+
+footer {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 2px solid #337ab7;
+  color: #777;
+}
+
+footer a:hover { //muda cor dos links quando passar o mouse
+  color: black;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}

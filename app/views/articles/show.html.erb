@@ -1,9 +1,11 @@
-<h1>Showing selected article</h1>
-  <p>
-    Title: <%= @article.title %>
-  </p>
-  <p>
-    Description: <%= @article.description %>
-  </p>
-
-<%= link_to "Back", articles_path %>
+<h2 align="center"><%= @article.title %></h2>
+<div class="well col-xs-8 col-xs-offset-2">
+  <!-- simple_format(text) - mantém a formatação inserida pelo usuário na criação do artigo -->
+  <%= simple_format(@article.description) %>
+  <div class="article-actions">
+    <%= link_to "Edit", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
+    <!-- <a href="/articles" class="btn btn-xs btn-success">Articles</a> -->
+    <%= link_to "Delete", article_path(@article), class: "btn btn-xs btn-danger", method: :delete,
+                                                  data: {confirm: "Are you sure?" } %>
+  </div>
+</div>

@@ -72,7 +72,17 @@ footer ul li {
 }
 
 .article-actions {
-  border-top: 1px solid #eaeaea;
-  padding-top: 15px;
   text-align: right;
+}
+
+.article-title {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.article-description {
+  border-top: 1px solid #eaeaea;
+  // padding-top: 15px;
+  // padding-bottom: 15px;
+  padding: 15px 0px
 }

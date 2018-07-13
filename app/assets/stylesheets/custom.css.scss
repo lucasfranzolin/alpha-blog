@@ -11,16 +11,20 @@ $navbar-default-bg: #337ab7;
   font-weight: bold;
 }
 
-#logo:hover { /* muda a cor quando passa o mouse por cima do logo*/
-  color: rgba(12,69,114,1);
-}
-
 .navbar {
   font-weight: bold;
 }
 
-.navbar-default .navbar-nav > li > a{
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav .open .dropdown-menu > li > a{
   color: white;
+}
+
+#logo:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: rgba(12,69,114,1);
+}
+
+.navbar-nav > li > .dropdown-menu {
+  background-color: #337ab7;
 }
 
 .jumbotron {
@@ -45,7 +49,7 @@ footer a:hover { //muda cor dos links quando passar o mouse
   color: black;
 }
 
-footer small {
+footer small, .button-create {
   float: left;
 }
 
@@ -59,15 +63,7 @@ footer ul li {
   margin-left: 15px;
 }
 
-.button-create {
-  float: left;
-}
-
-.button-cancel {
-  float: right;
-}
-
-.button-new {
+.button-cancel, .button-new {
   float: right;
 }
 

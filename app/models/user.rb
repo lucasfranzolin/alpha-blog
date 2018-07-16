@@ -1,9 +1,12 @@
 class User < ApplicationRecord
+  has_many :articles
+  # salva os emails no banco tudo com letra minuscula
+  before_save { self.email = email.downcase }
   validates :username, presence: true,
                        uniqueness: { case_sensitive: false },
                        length: {minimum: 3, maximum: 25}
 
-  # expressão regular entre "\" e "i"
+  # expressão regular entre "/" e "i"
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates :email, presence: true,

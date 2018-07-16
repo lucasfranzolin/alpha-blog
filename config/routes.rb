@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   # Gera todos os paths automaticamente para :articles
   resources :articles
 
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
+
 end

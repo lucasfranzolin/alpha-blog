@@ -9,7 +9,7 @@
           <!-- truncate (texto, numero de caracteres a serem exbidos)-->
           <%= truncate(a.description, length: 100) %>
           <div class="article-meta-details">
-            <small> Created by: <%= a.user.username if a.user %>
+            <small> Created by: <%= a.user.username if a.user %>, 
                         <%= time_ago_in_words(a.created_at) %> ago,
                         last update: <%= time_ago_in_words(a.updated_at) %> ago
             </small>
@@ -25,7 +25,3 @@
     </div>
   </div>
 <% end %>
-
-  <div class="col-md-12">
-    <a href="/articles/new" class="btn btn-primary btn-lg button-new">New</a>
-  </div>

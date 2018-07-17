@@ -24,6 +24,15 @@
           </div>
         </div>
 
+        <!-- Categories -->
+        <div class="form-group ">
+          <div class="row col-md-12 col-md-offset-2">
+            <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+              <% cb.label(class: "checkbox-inline input_checkbox") { cb.check_box(class: "checkbox") + cb.text} %>
+            <% end %>
+          </div>
+        </div>
+
         <!-- Buttons -->
         <div class="form-group ">
           <div class="col-md-12">

@@ -1,6 +1,13 @@
 <h1 align="center">Categories</h1>
+
+<p align="center">
+  <a href="/categories/new"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> new</a>
+</p>
+
 <div align="center">
+
   <%= will_paginate %>
+
   <% @categories.each do |c| %>
     <ul class="list-unstyled">
       <div class="row">
@@ -13,5 +20,7 @@
       </div>
     </ul>
   <% end %>
+
   <%= will_paginate %>
+
 </div>
